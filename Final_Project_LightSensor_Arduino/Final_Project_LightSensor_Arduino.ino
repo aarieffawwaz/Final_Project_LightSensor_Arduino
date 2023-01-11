@@ -1,7 +1,7 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 const int pinSensor = A1; //declared sensor pin
-const int pinLED = 6; //declared pin led //nanti ganti buat Lampu
+const int pinLED = 6; //declared pin buat Lampu
 
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
