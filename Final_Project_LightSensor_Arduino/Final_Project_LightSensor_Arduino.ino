@@ -26,19 +26,21 @@ void loop() {
   if (!digitalRead(downButton)){
     menu++;
     updateMenu();
-    delay(100);
+    delay(200);
     while (!digitalRead(downButton));
+    //jika menekan tombol terlalu lama maka akan ditangkap dalam while loop untuk
+    //mencegah skroll ke bawah
   }
   if (!digitalRead(upButton)){
     menu--;
     updateMenu();
-    delay(100);
+    delay(200);
     while(!digitalRead(upButton));
   }
   if (!digitalRead(selectButton)){
     executeAction();
     updateMenu();
-    delay(100);
+    delay(200);
     while (!digitalRead(selectButton));
   }
 }
@@ -46,7 +48,7 @@ void loop() {
 void updateMenu() {
   switch (menu) {
     case 0:
-      menu = 1;
+      menu = 4;
       updateMenu();
       break;
     case 1:
@@ -74,7 +76,7 @@ void updateMenu() {
       lcd.print(">4.Kamar Tidur");
       break;
     case 5:
-      menu = 0;
+      menu = 1;
       updateMenu();
       break;
   }
