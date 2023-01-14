@@ -194,7 +194,7 @@ void action4() {
       delay(400);
       int lux_ruangan = analogRead(pinSensor);
       //kondisi terang
-      if(lux_ruangan >= 50){
+      if(lux_ruangan >= 30){
         digitalWrite(pinLED, HIGH); //pake 'HIGH' lampu mati karena SSRnya active low
         Serial.println(lux_ruangan);
         Serial.println("Mati");
@@ -206,7 +206,7 @@ void action4() {
         lcd.print(lux_ruangan);
         }
       //kondisi gelap
-      else if(lux_ruangan < 50) {
+      else if(lux_ruangan < 30) {
         digitalWrite(pinLED, LOW); //pake 'LOW' lampu hidup karena SSRnya active low
         Serial.println(lux_ruangan);
         Serial.println("Nyala");
